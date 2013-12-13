@@ -10,7 +10,7 @@ if [ ! -z "$1" ]; then
 fi
 
 # install required packages
-yum install -y emacs zlib-devel automake autoconf libtool auto-buildrequires openssl-devel
+yum install -y zlib-devel automake autoconf libtool auto-buildrequires openssl-devel
 
 # setup yamabiko-libyaml-$version.tar.gz
 rm -fR $dst*
