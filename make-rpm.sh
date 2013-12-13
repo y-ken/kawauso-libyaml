@@ -1,6 +1,6 @@
 #!/bin/bash
 version=0.1.4
-dst=td-libyaml-$version
+dst=yamabiko-libyaml-$version
 cur=`pwd`
 
 # user defined revision
@@ -12,7 +12,7 @@ fi
 # install required packages
 yum install -y emacs zlib-devel automake autoconf libtool auto-buildrequires openssl-devel
 
-# setup td-libyaml-$version.tar.gz
+# setup yamabiko-libyaml-$version.tar.gz
 rm -fR $dst*
 rm -fR yaml-0.1.4*
 wget 'http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz'
@@ -31,13 +31,13 @@ mkdir rpmbuild
 pushd rpmbuild
 mkdir BUILD RPMS SOURCES SPECS SRPMS
 # locate spec
-cp ../redhat/td-libyaml.spec SPECS
+cp ../redhat/yamabiko-libyaml.spec SPECS
 # locate source tarball
 mv ../$dst.tar.gz SOURCES
 # build
 if [ -z "$rpm_dist" ]; then
-  rpmbuild -v -ba --clean SPECS/td-libyaml.spec
+  rpmbuild -v -ba --clean SPECS/yamabiko-libyaml.spec
 else
-  rpmbuild -v -ba --define "dist .${rpm_dist}" --clean SPECS/td-libyaml.spec
+  rpmbuild -v -ba --define "dist .${rpm_dist}" --clean SPECS/yamabiko-libyaml.spec
 fi
 popd

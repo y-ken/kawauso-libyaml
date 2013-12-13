@@ -3,7 +3,7 @@
 # Upstream: Kirill <xi$gamma,dn,ua>
 
 Summary: Implementation of a YAML 1.1 parser and emitter
-Name: td-libyaml
+Name: yamabiko-libyaml
 Version: 0.1.4
 Release: 1%{?dist}
 License: MIT/X Consortium
@@ -31,7 +31,7 @@ It includes a Python language binding.
 
 %build
 
-%configure --disable-static --prefix=%{_libdir}/fluent/libyaml --exec-prefix=%{_libdir}/fluent/libyaml --libdir=%{_libdir}/fluent/libyaml/lib --includedir=%{_libdir}/fluent/libyaml/include
+%configure --disable-static --prefix=%{_libdir}/yamabiko/libyaml --exec-prefix=%{_libdir}/yamabiko/libyaml --libdir=%{_libdir}/yamabiko/libyaml/lib --includedir=%{_libdir}/yamabiko/libyaml/include
 %{__make} %{?_smp_mflags} AM_CFLAGS=""
 
 %install
@@ -47,7 +47,7 @@ It includes a Python language binding.
 %files
 %defattr(-, root, root, 0755)
 %doc
-%{_libdir}/fluent/libyaml/
+%{_libdir}/yamabiko/libyaml/
 
 %changelog
 * Tue Dec 27 2011 Rilindo Foster (rilindo.foster@monzell.com - 0.1.4-1
